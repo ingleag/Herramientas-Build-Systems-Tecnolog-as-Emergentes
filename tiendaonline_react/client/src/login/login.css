@@ -1,0 +1,39 @@
+body{
+  background-image: url('../img/login-fondo.jpg');
+  background-size: cover;
+  
+  }
+  
+  .main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50.6rem;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .login-container{
+    width: 40%;
+  }
+
+  .login-container input{
+    color: white;
+  }
+
+  .login-container h4{
+    text-align: center;
+    color: #8B0913;
+  }
+  div.btn-container{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .error{
+    color: green;
+  }
+  .error-container{
+    height: 2em;
+  }
+  

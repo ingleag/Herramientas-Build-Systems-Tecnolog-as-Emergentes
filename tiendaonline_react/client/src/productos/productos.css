@@ -1,0 +1,39 @@
+body{
+    background-size: cover;
+  }
+
+  .container{
+    display: flex;
+    width: 100%;
+    
+    
+    background-color: rgb(255,255,255,0.7);
+  }
+
+.row{
+  width: 100%; margin: 0%; padding: 0%
+}
+
+.card-action{
+  width: 100%; margin: 0%; padding: 0%
+}
+
+img{
+  height: 10rem
+}
+
+.btn-vermas{
+  margin: 1%; width: 45%;color: white;text-transform: none
+}
+
+.btn-anadir{
+  margin: 1%; width: 30%;color: white;text-transform: none
+}
+
+.input-cant{
+  width: 15%; height: 2rem; border-bottom: 0rem; padding: 0%; margin: 2%
+}
+
+.input-buscar{
+  width: 80%; border-bottom: 0rem
+}

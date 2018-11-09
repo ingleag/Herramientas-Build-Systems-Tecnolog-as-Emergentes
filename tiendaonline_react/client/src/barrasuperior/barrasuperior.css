@@ -1,0 +1,20 @@
+.nav-wrapper{
+    background-color: gray;
+    font-size: 10px;
+    margin: auto;
+    overflow:hidden;
+}
+
+.notif{
+    position: absolute;
+}
+
+.notification-badge {
+    position:relative;
+    padding:5px 9px;
+    background-color: red;
+    color: white;
+    bottom: 15px;
+    left: 15px;
+    border-radius: 50%;
+  }
