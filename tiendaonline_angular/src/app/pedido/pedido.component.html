@@ -1,0 +1,39 @@
+<barra-superior class="navbar-fixed"></barra-superior>
+<br>
+<br>
+<br>
+<br>
+<table class="bordered striped highlight responsive-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th style="text-align: center">Descripción</th>
+      <th style="text-align: center">Precio</th>
+      <th style="text-align: center">Cantidad</th>
+      <th style="text-align: center">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pto of carrito">
+      <td style="text-align: center; width: 0%"><img [src]="'src/img/' + pto.imagen" style="height: 4rem;border: 0ch;padding: 0%"></td>
+      <td style="text-align: left">{{pto.nombre}}</td>
+      <td style="text-align: right">{{formatNumber.new(pto.precio, "$")}}</td>
+      <td style="text-align: center">{{formatNumber.new(pto.unidadCompra)}}</td>
+      <td style="text-align: right">{{formatNumber.new(pto.unidadCompra * pto.precio, "$")}}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>TOTAL:</td>
+      <td style="text-align: right">{{formatNumber.new(totalPedido, "$")}}</td>
+    </tr>
+  </tfoot>
+</table>
+
+<div class="card-action" style="width: 100%; margin: 0%; padding: 0%; text-align: right">
+  <a class='btn' [href]="'principal'" style="margin: 1%; width: 10%;color: white">Volver</a>
+  <a class="waves-effect waves-light btn-small orange" style="margin: 1%; width: 10%;color: white" (click)="confirmarPedido()">Confirmar</a>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      
+   </head>
+   <body>
+     
+<nav>
+  <div class="nav-wrapper">
+    <a [routerLink]="['principal']" class="brand-logo"><h5>La Bodega</h5></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a [routerLink]="['principal']"><i class="material-icons">apps</i></a></li>
+      <li><a [routerLink]="['pedido']" (click)="verPedido()"><i class="material-icons notif">shopping_cart</i><small id="badgeCart" class="notification-badge">0</small></a></li>
+      <li><a [routerLink]="['principal']"><i class="material-icons">inbox</i></a></li>
+      <li><a [routerLink]="['']" (click)="OnSalir()"><i class="material-icons">exit_to_app</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+   
+   </body>
+</html>
+
+ 

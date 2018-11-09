@@ -1,0 +1,65 @@
+<div *ngIf="showDetalle; then detallesBlock; else tiendaBlock"></div>
+
+<ng-template #tiendaBlock>
+  <div class="container">
+    <div class="row" style="width: 100%; margin: 0%; padding: 0%">
+      <div class="col s12 m6 l8" style="text-align: left; margin: 0%; padding: 0%">
+          <h4>Catálogo de Productos</h4>
+      </div>
+      
+      <div class="col s12 m6 l4" style="text-align: left; margin: 0%; padding: 0%">
+        <h5>¿Que estás buscando?</h5>
+        <input placeholder="Buscar producto" type="text" class="browser-default" style="width: 80%; border-bottom: 0rem" (input)="onSearchChange($event.target.value)">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" style="width: 100%; margin: 0%; padding: 0%">
+      <div *ngFor="let producto of productos" class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img [src]="'src/img/' + producto.imagen" style="height: 10rem">
+          </div>
+          <div class="card-content">
+            <h5>{{producto.nombre}}</h5>
+            <h6>Precio: {{producto.precio}}</h6>
+            <h6>Unidades disponibles: {{producto.disponible}}</h6>
+          </div>
+          <div class="card-action" style="width: 100%; margin: 0%; padding: 0%">
+            <a class='btn' style="margin: 1%; width: 45%;color: white;text-transform: none" (click)="verDetalle(producto.nombre)">Ver mas</a>
+            <a class="waves-effect waves-light btn-small orange" style="margin: 1%; width: 30%;color: white;text-transform: none" (click)="getCarrito(producto, unidadCompra.value)">Añadir</a>
+            <input type="number" class="browser-default" value="1" style="width: 15%; height: 2rem; border-bottom: 0rem; padding: 0%; margin: 2%" #unidadCompra/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #detallesBlock>
+    <div class="container">
+        <div class="row" *ngFor="let pto of productoDet">
+          <div class="card">
+            <div class="col s4">
+              <div class="card-image">
+                <img [src]="'src/img/' + pto.imagen" style="height: 18rem">
+              </div>
+            </div>
+            <div class="col s8">
+              <div class="card-content">
+                <h5>{{pto.nombre}}</h5>
+                <h6>Precio: {{pto.precio}}</h6>
+                <h6>Unidades disponibles: {{pto.disponible}}</h6>
+              </div>
+              <div class="card-action" style="width: 100%; margin: 0%; padding: 0%">
+                <a class='btn' style="margin: 1%; width: 40%;color: white" (click)="verDetalle('')" modal>Volver</a>
+                <a class="waves-effect waves-light btn-small orange" style="margin: 1%; width: 30%;color: white" (click)="getCarrito(pto, unidadCompraDet.value)">Añadir</a>
+                <input type="number" class="browser-default" value="1" style="width: 20%; height: 2rem; border-bottom: 0rem; padding: 0%; margin: 2%" #unidadCompraDet/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</ng-template>
+

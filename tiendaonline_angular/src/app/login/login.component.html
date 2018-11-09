@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="login-container">
+        <h4>Inicia sesión</h4>
+        <form (ngSubmit)="enviarForm(f)" #f="ngForm">
+          <div class="row align-center">
+            <div class="col s12">
+              <label for="email-input">Dirección correo electrónico
+                <input type="email" id="username" ngModel name="usuario" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+              </label>
+            </div>
+          </div>
+          <div class="row align-center">
+            <div class="col s12">
+              <label>Contraseña
+                <input type="password" id="password" ngModel name="contrasena" required>
+              </label>
+            </div>
+          </div>
+          <div class="row align-center">
+            <div class="col s12 error-container">
+              <label class="error" *ngIf="!f.valid">El email debe ser valido y la contraseña es obligatoria</label>
+            </div>
+          </div>
+          <div class="row align-center">
+            <div class="col s12 btn-container">
+              <button class="waves-effect waves-light btn">Ingresar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
